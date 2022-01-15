@@ -23,4 +23,16 @@ cd plutus-playground-client
 npm run start
 ```
 - Wait for the client to start, it will log "webpack compiled with …”
-- Now all you have to do is open a web browser and navigate to url https://localhost:8009/ (need to accept that ssl certificate is invalid)
+- Now all you have to do is open a web browser and navigate to url https://localhost:8009/ (need to accept that ssl certificate is invalid).
+
+
+If you can't access to https://localhost:8009/ try add --host 0.0.0.0 to scripts in package.json as follow:
+```
+...
+"scripts": {
+    ...
+    "build:webpack:dev": "webpack-cli serve --host 0.0.0.0 --progress --inline --hot --mode=development --node-env=development --port=8009",
+    ...
+},
+...
+```

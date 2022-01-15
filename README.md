@@ -9,6 +9,7 @@ Need Docker installed.
 
 - Create a .env file following the .env.example
 - Set GIT_TAG according to the lecture
+- Run `chmod +x install_nix.sh`
 - Run `docker-compose up -d`
 - Run `docker exec -ti plutus-course /bin/bash` and `. /home/$USER/.nix-profile/etc/profile.d/nix.sh` in two terminals
 - Run `nix-shell` in the first terminal and wait till it ends. It could take several minutes. Then run the following commands and wait for server to start, it will log "Interpreter ready":

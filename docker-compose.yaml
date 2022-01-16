@@ -1,15 +1,19 @@
 services:
-  ubuntu:
+  debian:
     build:
       context: .
       dockerfile: Dockerfile
       args:
-        USER: ${USER}
+        DOCKER_USER: ${DOCKER_USER}
         USER_PWD: ${USER_PWD}
         GIT_TAG: ${GIT_TAG}
     env_file:
       - .env
     container_name: plutus-course
     ports:
+      - 8002:8002
       - 8009:8009
-    entrypoint: /entrypoint.sh
+    volumes:
+      - nix:/nix
+volumes:
+  nix:

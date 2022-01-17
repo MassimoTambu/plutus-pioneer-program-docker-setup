@@ -16,6 +16,8 @@ Need [Docker](https://www.docker.com/get-started) installed.
 - Run `docker-compose up` . It will takes some time to set up the environment
 - You are ready to go!
 
+To enter the container, run `docker exec -it nix-shell`
+
 **Playground**: http://localhost:8009/
 <br />
 **High level Docs**: http://localhost:8002/

@@ -15,6 +15,5 @@ services:
       - 8009:8009
     volumes:
       - nix:/nix
-      - ${HOST_DIR:-./bind}:/home/$DOCKER_USER/host
 volumes:
   nix:

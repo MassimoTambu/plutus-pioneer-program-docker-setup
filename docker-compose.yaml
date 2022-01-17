@@ -7,13 +7,12 @@ services:
         DOCKER_USER: ${DOCKER_USER}
         USER_PWD: ${USER_PWD}
         GIT_TAG: ${GIT_TAG}
-    env_file:
-      - .env
-    container_name: plutus-course
+    container_name: plutus-env
     ports:
       - 8002:8002
       - 8009:8009
     volumes:
       - nix:/nix
+      - ${HOST_DIR:-./bind}:/home/$DOCKER_USER/host
 volumes:
   nix:

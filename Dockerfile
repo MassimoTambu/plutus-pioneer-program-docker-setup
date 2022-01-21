@@ -22,6 +22,7 @@ RUN adduser $DOCKER_USER sudo
 
 COPY ./run_playground.sh /home/$DOCKER_USER/
 RUN chmod +x /home/$DOCKER_USER/run_playground.sh
+RUN mkdir -m 0755 /nix && chown $DOCKER_USER /nix
 
 USER $DOCKER_USER
 

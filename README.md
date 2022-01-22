@@ -5,7 +5,7 @@ The Dockerfile follows the commands of this [guide](https://docs.google.com/docu
 
 Thanks to the whole community who helped improve the setup 💯
 
-**Work on Windows WSL2 too**
+**Also works on Windows with WSL2 but first nix-shell run requires up to 16GB RAM to complete successfully**
 
 # Installation
 

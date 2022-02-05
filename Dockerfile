@@ -16,7 +16,7 @@ RUN useradd --create-home --shell /bin/bash $DOCKER_USER
 RUN echo $DOCKER_USER:$USER_PWD | chpasswd
 
 # install dependencies
-RUN apt update && apt install -y curl vim git cabal-install sudo procps net-tools xz-utils man && mandb
+RUN apt update && apt install -y curl vim git zlib1g-dev cabal-install sudo procps net-tools xz-utils man && mandb
 
 RUN adduser $DOCKER_USER sudo
 
@@ -29,6 +29,11 @@ USER $DOCKER_USER
 WORKDIR /home/$DOCKER_USER/
 # Install nix and configure cache
 RUN bash /tmp/install_nix.sh
+
+RUN cabal update && cabal install Cabal cabal-install
+
+# clone plutus-pioneer-program
+RUN cd && git clone https://github.com/input-output-hk/plutus-pioneer-program.git
 
 # clone plutus-apps and checkout to GIT_TAG
 RUN cd && git clone https://github.com/input-output-hk/plutus-apps && \
